@@ -80,49 +80,52 @@ class _EvergreenSignInScreenState extends State<EvergreenSignInScreen> {
           Align(
             alignment: Alignment.centerLeft,
             child: CircleIconButton(
-              icon: Icon(
-                Icons.arrow_back_ios_rounded,
+              icon: const Icon(
+                Icons.arrow_back_rounded,
                 size: 20,
                 color: EvergreenColors.text,
               ),
-              onTap: () {},
+              onTap: () => Navigator.maybePop(context),
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           AuthHeader(
-            title: "Sign in",
-            alternate: "Sign up",
-            onAlternateTap: () {},
+            title: 'Sign in',
+            alternate: 'Sign up',
+            onAlternateTap: () => _showMessage('Sign up coming soon'),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
-            "Fill the from to sign into account",
+            'Fill the form to sign into account',
             style: GoogleFonts.inter(
               fontSize: 15,
               color: EvergreenColors.text.withValues(alpha: 0.85),
             ),
           ),
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
           OutlinedField(
             controller: _emailController,
-            label: "Email",
-            hint: "Enter your email address",
+            label: 'Email',
+            hint: 'Enter your email address',
+            keyboardType: TextInputType.emailAddress,
+            textInputAction: TextInputAction.next,
             validator: Validators.email,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           OutlinedPasswordField(
             controller: _passwordController,
+            onSubmitted: (_) => _signIn(),
             validator: Validators.password,
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Align(
             alignment: Alignment.centerRight,
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () => _showMessage('Password reset coming soon'),
                 child: Text(
-                  "Forgot password",
+                  'Forgot password',
                   style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
@@ -132,32 +135,28 @@ class _EvergreenSignInScreenState extends State<EvergreenSignInScreen> {
               ),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Align(
             alignment: Alignment.centerLeft,
             child: LabeledSwitch(
-              label: "Remember",
+              label: 'Remember',
               value: _remember,
-              onChanged: (value) {
-                setState(() {
-                  _remember = value;
-                });
-              },
+              onChanged: (v) => setState(() => _remember = v),
             ),
           ),
-          SizedBox(height: 28),
-          GradientButton(label: "Sign In", onTap: _signIn),
-          SizedBox(height: 36),
-          UppercaseDivider(label: "Or continue with"),
-          SizedBox(height: 24),
+          const SizedBox(height: 28),
+          GradientButton(label: 'Sign In', onTap: _signIn),
+          const SizedBox(height: 36),
+          const UppercaseDivider(label: 'Or continue with'),
+          const SizedBox(height: 24),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _social(FontAwesomeIcons.facebookF, "Facebook"),
-              SizedBox(width: 24),
-              _social(FontAwesomeIcons.instagram, "Instagram"),
-              SizedBox(width: 24),
-              _social(FontAwesomeIcons.google, "Google"),
+              _social(FontAwesomeIcons.facebookF, 'Facebook'),
+              const SizedBox(width: 24),
+              _social(FontAwesomeIcons.instagram, 'Instagram'),
+              const SizedBox(width: 24),
+              _social(FontAwesomeIcons.google, 'Google'),
             ],
           ),
         ],
