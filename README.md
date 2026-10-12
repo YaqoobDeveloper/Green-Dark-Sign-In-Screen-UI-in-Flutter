@@ -12,6 +12,13 @@ https://yaqoobdeveloper.github.io/Green-Dark-Sign-In-Screen-UI-in-Flutter/
 💻 **GitHub Repository:**  
 https://github.com/YaqoobDeveloper/Green-Dark-Sign-In-Screen-UI-in-Flutter
 
+▶️ **Video Demo:**  
+[https://youtube.com/shorts/HcuOsWRHnyA](https://youtube.com/shorts/OtD2kphtBDs?feature=share)
+
+## 📸 Preview
+
+<img width="858" height="900" alt="Image" src="https://github.com/user-attachments/assets/e2b7a24d-039f-404a-a986-1860d927f698" />
+
 ## ✨ Features
 
 - 🌲 Deep-green gradient background
